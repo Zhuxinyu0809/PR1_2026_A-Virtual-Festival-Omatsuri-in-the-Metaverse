@@ -9,6 +9,10 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"picker_window_position_offset.00000000" = "-311;325;764;582"
+	"picker_visibility_flags.00000000" = "0"
+	"picker_item_size.00000000" = "32"
+	"picker_inspector.00000000" = "0"
 }
 providers = {
 	asset = {
@@ -65,6 +69,20 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"xri right locomot"
+	"xri"
+	"xr right "
+	""
+	"xri left"
+	"XRI Left "
+	"XRI Left Interaction"
+	"x"
+	"select"
+	"activate"
+	"XRI left i"
+	"XRI LeftH"
+	"XRI LeftHand Interactio"
+	"XRI LeftHand Interaction / Activate Value"
 ]
 searchItemFavorites = [
 ]

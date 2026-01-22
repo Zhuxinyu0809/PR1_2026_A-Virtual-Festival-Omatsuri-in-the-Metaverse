@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Left Hand Physics
+  - Right Hand Physics
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Left Hand Physics
   - Right Hand Physics
   - Non Physics Hand
-  - 
+  - Hand UI Ray
   - 
   - 
   - 
