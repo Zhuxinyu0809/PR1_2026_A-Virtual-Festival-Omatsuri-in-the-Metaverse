@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5245a581f8f707d40915fd17907b7783
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81728
+  packageName: Legacy Mirror Shaders / AR-VR Ready
+  packageVersion: 
+  assetPath: Assets/AkilliMum/Standard/Invisible/Shaders/SkyBoxesStereoEquirectangular.shader
+  uploadId: 0

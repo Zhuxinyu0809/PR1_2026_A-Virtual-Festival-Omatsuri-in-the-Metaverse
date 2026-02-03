@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/Mirror Room.unity
+    guid: 05ded250877db469fb50ca18881fe507
+  - enabled: 1
+    path: Assets/_Scenes/Mirror Room.unity
+    guid: 5e68d51f2b8574875a89ddc22d93a254
+  - enabled: 1
     path: Assets/_Scenes/VRSettings.unity
     guid: 1dcf10511de214cbaa307a983ac54a61
   - enabled: 1

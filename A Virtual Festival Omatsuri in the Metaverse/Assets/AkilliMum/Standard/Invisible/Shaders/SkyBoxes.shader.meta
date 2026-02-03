@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6bcc02d665e7a804bb66b78891ac10f7
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81728
+  packageName: Legacy Mirror Shaders / AR-VR Ready
+  packageVersion: 
+  assetPath: Assets/AkilliMum/Standard/Invisible/Shaders/SkyBoxes.shader
+  uploadId: 0
