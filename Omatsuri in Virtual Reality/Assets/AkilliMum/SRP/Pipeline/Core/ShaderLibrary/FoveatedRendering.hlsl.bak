@@ -1,0 +1,8 @@
+#ifndef UNITY_FOVEATED_RENDERING_INCLUDED
+#define UNITY_FOVEATED_RENDERING_INCLUDED
+
+#if defined(SHADER_API_PS5) && defined(_FOVEATED_RENDERING_NON_UNIFORM_RASTER)
+#include "../../Pipeline/Core/ShaderLibrary/API/FoveatedRendering_PSSL.hlsl"
+#endif
+
+#endif // UNITY_FOVEATED_RENDERING_INCLUDED
