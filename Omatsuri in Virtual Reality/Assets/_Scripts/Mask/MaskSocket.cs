@@ -117,7 +117,7 @@ public class MaskSocket : MonoBehaviour
         mask.rb.isKinematic = true;
         mask.rb.useGravity = false;
         
-        mask.rb.velocity = Vector3.zero; 
+        mask.rb.linearVelocity = Vector3.zero; 
         mask.rb.angularVelocity = Vector3.zero;
 
         mask.transform.SetParent(this.transform);

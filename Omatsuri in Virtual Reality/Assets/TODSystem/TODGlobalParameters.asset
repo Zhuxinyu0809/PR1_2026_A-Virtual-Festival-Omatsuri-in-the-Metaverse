@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00ec0cbd352f5b47818976299a9e2b6, type: 3}
+  m_Name: TODGlobalParameters
+  m_EditorClassIdentifier: 
+  timeFlowSpeed: 1
+  timeFlowScale: 2
+  _currentTime: 20.4
+  isTimeFlow: 0
+  timeOfDays:
+  - {fileID: 11400000, guid: 62c02a2ae90684f02aeb5fb0bd01f518, type: 2}
+  - {fileID: 11400000, guid: efef5d8f96051429b9642173dd6edea9, type: 2}
+  - {fileID: 11400000, guid: 03a2db8a328704feb9ec7a54a98a97fb, type: 2}
+  - {fileID: 11400000, guid: 10f6ae56670c34f7a8aa1589e3d244d0, type: 2}
+  - {fileID: 11400000, guid: a557f8af3cac240918948da7b7a64178, type: 2}
+  - {fileID: 11400000, guid: 36cac684fefdf465ea6d97f20ff5eece, type: 2}
+  - {fileID: 11400000, guid: 0eb76e585449448edb6b594b0e34342a, type: 2}
+  - {fileID: 11400000, guid: b50f87b64fbd44ee49c301a3b8d529de, type: 2}
+  - {fileID: 11400000, guid: c894284e13b414f9c930c33741cc2090, type: 2}
+  - {fileID: 11400000, guid: 7ec5eea7acbd041acada1c11d91c0b02, type: 2}
+  currentTimeOfDay: {fileID: 11400000, guid: b50f87b64fbd44ee49c301a3b8d529de, type: 2}
+  _dayOrNight: 1
+  todElapsedTimeRatio: 0.049999952
+  todElapsedTime: 0.39999962
+  todFrameList:
+  - name: Night2
+    _time: 4
+  - name: PreDawn
+    _time: 5
+  - name: Dawn
+    _time: 6
+  - name: AfterDawn
+    _time: 7
+  - name: Noon1
+    _time: 8
+  - name: Noon2
+    _time: 16
+  - name: PreDusk
+    _time: 17
+  - name: Dusk
+    _time: 18
+  - name: AfterDusk
+    _time: 19
+  - name: Night1
+    _time: 20
+  MainlightColor: {r: 0.09454728, g: 0.11304701, b: 0.3103774, a: 0}
+  MainlightIntensity: 0
+  MainlightDirection: {x: 0.95125127, y: 0.254887, z: 0.044943437, w: 0.16773118}
+  MainlightTiltAngle: {x: 0, y: 0, z: 30}
+  FogLightColor: {r: 0.04801648, g: 0.3051959, b: 0.5924381, a: 0}
+  FogLightIntensity: 3
+  HGCoefficient: 0
+  IblBrdfLut: {fileID: 2800000, guid: 373b983f45125c042a202367c7f36bf4, type: 3}
+  TimeOfDayData: {fileID: 11400000, guid: 31c67636ff6455949a6f1bde7f0025a3, type: 2}
+  materials:
+  - {fileID: 2100000, guid: 3844b10fc6b8747b9b7416ae62eb5f7a, type: 2}
