@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 22fe382f01f918e41a3844fe4f0e96e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scripts/Controladores/thirdPerson/MiInput.cs
+  uploadId: 599978

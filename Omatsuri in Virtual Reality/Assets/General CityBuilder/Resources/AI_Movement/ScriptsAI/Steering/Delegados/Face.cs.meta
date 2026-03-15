@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ed398bbfa213e8b44b4d85237200ad28
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/Steering/Delegados/Face.cs
+  uploadId: 599978

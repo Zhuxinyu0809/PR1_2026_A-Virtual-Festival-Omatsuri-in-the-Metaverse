@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9acacdb20350e7b4eacf2a2e8f2eded7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scripts/NodoCopia.cs
+  uploadId: 599978

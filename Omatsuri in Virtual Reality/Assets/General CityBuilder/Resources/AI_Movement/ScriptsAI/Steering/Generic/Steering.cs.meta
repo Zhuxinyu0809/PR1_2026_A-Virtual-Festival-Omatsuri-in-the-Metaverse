@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6bf5fc734f3ea9a42a641807f84250a5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/Steering/Generic/Steering.cs
+  uploadId: 599978

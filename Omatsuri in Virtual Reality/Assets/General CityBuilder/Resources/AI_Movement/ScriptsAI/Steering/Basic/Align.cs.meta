@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5f67a1d2546315d43b67ea27c3a3bd17
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/Steering/Basic/Align.cs
+  uploadId: 599978

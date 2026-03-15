@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ab31f1adfbba005438ad2f322dc2f18f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/UniversalRenderPipelineGlobalSettings.asset
+  uploadId: 599978

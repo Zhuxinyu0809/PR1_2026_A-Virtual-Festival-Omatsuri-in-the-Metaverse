@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ff8d413ce6e5a64cb3627a5e37b304d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scenes/Demos/Demo/LightingData.asset
+  uploadId: 599978

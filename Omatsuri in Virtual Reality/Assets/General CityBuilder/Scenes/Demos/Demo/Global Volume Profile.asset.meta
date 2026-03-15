@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce12745ca34a09a40917db4e8bc8202e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scenes/Demos/Demo/Global Volume Profile.asset
+  uploadId: 599978

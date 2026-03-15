@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c76e3b913312b8544bbb79e709eadbff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/NPC/SimpleVillager.cs
+  uploadId: 599978

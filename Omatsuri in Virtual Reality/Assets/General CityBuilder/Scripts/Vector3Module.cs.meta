@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9e1f3b0ccea184746bc17fde38db3813
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scripts/Vector3Module.cs
+  uploadId: 599978

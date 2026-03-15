@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c91b7883f62f0d14eb60020ee86721a4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/Steering/Basic/Arrive.cs
+  uploadId: 599978

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9a7c1da2905009d46ad1adccf5a6761a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Resources/AI_Movement/ScriptsAI/Steering/Delegados/PathFollowing.cs
+  uploadId: 599978

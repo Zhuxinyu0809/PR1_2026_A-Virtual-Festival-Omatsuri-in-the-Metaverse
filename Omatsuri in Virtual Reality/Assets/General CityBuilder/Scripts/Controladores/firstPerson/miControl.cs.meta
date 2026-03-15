@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 60572ada590132d44a87b0e28fba247f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scripts/Controladores/firstPerson/miControl.cs
+  uploadId: 599978

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ab4f6c5e0ceb31541bfa219dec39756f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255413
+  packageName: General CityBuilder
+  packageVersion: 1.0
+  assetPath: Assets/General CityBuilder/Scripts/ajustarObjeto.cs
+  uploadId: 599978
