@@ -68,7 +68,7 @@ public class TosenkyoGameManager : MonoBehaviour
         isScoring = false;
         
         // 新增：俾玩家同開發者知道系統已經收到投擲指令，等緊物理靜止
-        if (meiNameText != null) meiNameText.text = "等待物件停定...";
+        if (meiNameText != null) meiNameText.text = "Waiting for objects to settle...";
         if (scoreText != null) scoreText.text = "--";
         
         Debug.Log("[Tosenkyo] 扇子已投出，等待物理系統靜止...");
@@ -116,8 +116,8 @@ public class TosenkyoGameManager : MonoBehaviour
         isScoring = false;
 
         // 重置 UI 顯示
-        if (meiNameText != null) meiNameText.text = "等待投擲...";
-        if (scoreText != null) scoreText.text = "-- 點";
+        if (meiNameText != null) meiNameText.text = "Waiting to be thrown...";
+        if (scoreText != null) scoreText.text = "-- Pts";
 
         // 重置物理狀態
         ResetRigidbody(fanRb, initFanPos, initFanRot);
