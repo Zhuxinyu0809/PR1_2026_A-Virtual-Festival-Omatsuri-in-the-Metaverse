@@ -427,8 +427,8 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb3d4505f985a48c9bbb0ee258945df2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1703228566}
+      insertIndex: 0
+      addedObject: {fileID: 1847854697}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb3d4505f985a48c9bbb0ee258945df2, type: 3}
       insertIndex: -1
@@ -466,7 +466,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb3d4505f985a48c9bbb0ee258945df2, type: 3}
   m_PrefabInstance: {fileID: 56474862}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1271316457
+--- !u!1 &643431559
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,9 +474,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1271316460}
-  - component: {fileID: 1271316459}
-  - component: {fileID: 1271316458}
+  - component: {fileID: 643431562}
+  - component: {fileID: 643431561}
+  - component: {fileID: 643431560}
   m_Layer: 0
   m_Name: '[BuildingBlock] Speech To Text'
   m_TagString: Untagged
@@ -484,13 +484,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1271316458
+--- !u!114 &643431560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271316457}
+  m_GameObject: {fileID: 643431559}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ebafe374ff6848bb9b28beabd283b5e, type: 3}
@@ -516,22 +516,34 @@ MonoBehaviour:
   manualStopOnly: 0
   onTranscript:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 766918339}
+        m_TargetAssemblyTypeName: Meta.XR.BuildingBlocks.AIBlocks.LlmAgent, Meta.XR.BuildingBlocks.AIBlocks
+        m_MethodName: SendMessage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lastTranscript: 
---- !u!114 &1271316459
+--- !u!114 &643431561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271316457}
+  m_GameObject: {fileID: 643431559}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: b246d3bb-3f91-4efe-893c-c4c2d0de7210
-  instanceId: 0457b3c3-306c-48fb-9c41-22c192ed3f2c
+  instanceId: ed27ddd3-3842-407e-a8c5-2bc30082842b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 23952c08-05e9-48de-b271-fadf8448828c
@@ -542,22 +554,22 @@ MonoBehaviour:
       _value: '{"value__":1}'
     - _memberName: modelProvider
       _value: ElevenLabs - scribe_v1
---- !u!4 &1271316460
+--- !u!4 &643431562
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271316457}
+  m_GameObject: {fileID: 643431559}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1465040799
+--- !u!1 &766918338
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -565,10 +577,105 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1465040803}
-  - component: {fileID: 1465040802}
-  - component: {fileID: 1465040801}
-  - component: {fileID: 1465040800}
+  - component: {fileID: 766918341}
+  - component: {fileID: 766918340}
+  - component: {fileID: 766918339}
+  m_Layer: 0
+  m_Name: '[BuildingBlock] Large Language Models'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &766918339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766918338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b538056738080f84594e832a6af9a157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  providerAsset: {fileID: 11400000, guid: f34b582b0a93a4fa896929b9b0ce45ec, type: 2}
+  systemPrompt: 
+  onPromptSent:
+    m_PersistentCalls:
+      m_Calls: []
+  onResponseReceived:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1240024457}
+        m_TargetAssemblyTypeName: Meta.XR.BuildingBlocks.AIBlocks.TextToSpeechAgent,
+          Meta.XR.BuildingBlocks.AIBlocks
+        m_MethodName: SpeakText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onImageCaptured:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &766918340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766918338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
+  blockId: ef19cfd3-3bb7-4107-9044-33fecdb8a359
+  instanceId: d7179c7b-f45c-4387-9071-48e634c78911
+  version: 1
+  installationRoutineCheckpoint:
+    _installationRoutineId: fb956d38-811e-4622-b453-c21ac1f76ff0
+    _installationVariants:
+    - _memberName: providerAssetSelection
+      _value: 
+    - _memberName: inferenceType
+      _value: '{"value__":1}'
+    - _memberName: modelProvider
+      _value: HuggingFace - llama-3.3-70b-versatile
+    - _memberName: includeDebuggingTools
+      _value: '{}'
+--- !u!4 &766918341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766918338}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240024455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240024459}
+  - component: {fileID: 1240024458}
+  - component: {fileID: 1240024457}
+  - component: {fileID: 1240024456}
   m_Layer: 0
   m_Name: '[BuildingBlock] Text To Speech'
   m_TagString: Untagged
@@ -576,13 +683,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1465040800
+--- !u!82 &1240024456
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465040799}
+  m_GameObject: {fileID: 1240024455}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -673,20 +780,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1465040801
+--- !u!114 &1240024457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465040799}
+  m_GameObject: {fileID: 1240024455}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 439814c7becd54b4b9004c9d8c7aefea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   providerAsset: {fileID: 11400000, guid: 4960d01dea5ef4f33a023575d2c46c2a, type: 2}
-  audioSource: {fileID: 1465040800}
+  audioSource: {fileID: 1240024456}
   preset: 1
   text: I love Llamas. I think they are the most beautiful animals in the world.
   onClipReady:
@@ -698,20 +805,20 @@ MonoBehaviour:
   onSpeakFinished:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1465040802
+--- !u!114 &1240024458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465040799}
+  m_GameObject: {fileID: 1240024455}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 89916747-a8be-4d3e-8563-65b00c7d2ffa
-  instanceId: b9270266-13b5-4c46-9b71-4cb0a405239a
+  instanceId: f8e53015-99a3-415c-80b2-4c7240544984
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 0844a8bd-2bf8-4cfb-8d71-911f1f917314
@@ -722,15 +829,15 @@ MonoBehaviour:
       _value: '{"value__":1}'
     - _memberName: modelProvider
       _value: ElevenLabs - eleven_flash_v2_5
---- !u!4 &1465040803
+--- !u!4 &1240024459
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465040799}
+  m_GameObject: {fileID: 1240024455}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -864,7 +971,7 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &1703228565
+--- !u!1 &1847854696
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -872,180 +979,151 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1703228566}
-  - component: {fileID: 1703228568}
-  - component: {fileID: 1703228567}
+  - component: {fileID: 1847854697}
+  - component: {fileID: 1847854702}
+  - component: {fileID: 1847854701}
+  - component: {fileID: 1847854700}
+  - component: {fileID: 1847854699}
+  - component: {fileID: 1847854698}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AI Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1703228566
+--- !u!4 &1847854697
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703228565}
+  m_GameObject: {fileID: 1847854696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.003927185, y: 0, z: -0.0036809512}
+  m_LocalScale: {x: 0.009596048, y: 0.009596053, z: 0.009596048}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 56474865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1703228567
+--- !u!114 &1847854698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703228565}
+  m_GameObject: {fileID: 1847854696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bc2a1eb96b147d5add59ae3a62be43, type: 3}
+  m_Script: {fileID: 11500000, guid: bc338904c79b349ba8119a2f5ea9ae04, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
---- !u!114 &1703228568
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
+  llmAgent: {fileID: 766918339}
+  sttAgent: {fileID: 643431560}
+  ttsAgent: {fileID: 1240024457}
+  npcAudioSource: {fileID: 1240024456}
+  npcPersonalityPrompt: "\u4F60\u662F\u4E00\u4E2A\u5E7D\u9ED8\u7684\u7CBE\u7075\u5BFC\u5E08\uFF0C\u8BB2\u8BDD\u7B80\u77ED\u98CE\u8DA3\uFF0C\u559C\u6B22\u7528\u6BD4\u55BB\u3002"
+--- !u!114 &1847854699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703228565}
+  m_GameObject: {fileID: 1847854696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15403450229c3a4b8455a61d6143a6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 439814c7becd54b4b9004c9d8c7aefea, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Utilities.TTSSpeaker
-  _events:
-    OnTextPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnTextPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnTextPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-    _onInit:
-      m_PersistentCalls:
-        m_Calls: []
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    _onFirstSampleReady:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackClipUpdated:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackQueueBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackQueueComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataQueued:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    OnStartSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnCancelledSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnFinishedSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-  PrependedText: 
-  AppendedText: 
-  _ttsService: {fileID: 0}
-  presetVoiceID: 
-  customWitVoiceSettings:
-    SettingsId: 
-    PrependedText: 
-    AppendedText: 
-    voice: Charlie
-    style: default
-    speed: 100
-    pitch: 100
-  verboseLogging: 0
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.TextToSpeechAgent
+  providerAsset: {fileID: 11400000, guid: 4960d01dea5ef4f33a023575d2c46c2a, type: 2}
+  audioSource: {fileID: 1240024456}
+  preset: 1
+  text: I love Llamas. I think they are the most beautiful animals in the world.
+  onClipReady:
+    m_PersistentCalls:
+      m_Calls: []
+  onSpeakStarting:
+    m_PersistentCalls:
+      m_Calls: []
+  onSpeakFinished:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1847854700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847854696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebafe374ff6848bb9b28beabd283b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.SpeechToTextAgent
+  providerAsset: {fileID: 11400000, guid: 4960d01dea5ef4f33a023575d2c46c2a, type: 2}
+  deviceName: 
+  sampleRate: 16000
+  channels: 1
+  rmsWindowSeconds: 0.02
+  vadStartThresholdDb: 12
+  vadStopThresholdDb: 6
+  maxSilenceSeconds: 0.35
+  minSpeechSeconds: 0.2
+  endPadSeconds: 0.06
+  envelopeAttackSeconds: 0.015
+  envelopeReleaseSeconds: 0.08
+  noiseWindowSeconds: 1.5
+  noisePercentile: 0.2
+  quietMarginDb: 1
+  maxDurationSeconds: 20
+  prePadSeconds: 0.35
+  manualStopOnly: 0
+  onTranscript:
+    m_PersistentCalls:
+      m_Calls: []
+  lastTranscript: 
+--- !u!114 &1847854701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847854696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78fe762148452284580b7977321a431c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.LlmAgentHelper
+  userInput: 
+  selectedPrompt: 0
+  includeImage: 1
+  imageSource: 0
+  promptImage: {fileID: 0}
+  promptImageUrl: 
+--- !u!114 &1847854702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847854696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b538056738080f84594e832a6af9a157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.LlmAgent
+  providerAsset: {fileID: 11400000, guid: f34b582b0a93a4fa896929b9b0ce45ec, type: 2}
+  systemPrompt: 
+  onPromptSent:
+    m_PersistentCalls:
+      m_Calls: []
+  onResponseReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  onImageCaptured:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1894788339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,5 +1326,6 @@ SceneRoots:
   - {fileID: 1562478393}
   - {fileID: 1010144049873405566}
   - {fileID: 56474862}
-  - {fileID: 1271316460}
-  - {fileID: 1465040803}
+  - {fileID: 643431562}
+  - {fileID: 1240024459}
+  - {fileID: 766918341}
