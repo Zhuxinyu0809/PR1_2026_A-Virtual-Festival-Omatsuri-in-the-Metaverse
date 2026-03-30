@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SpeechToText_ElevenLabs_ProviderProfile
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.ElevenLabsProvider
   supportedInferenceTypes: 1
-  apiKey: sk_b1f00d9a05ab9502da10f9870379adfd07fbba187943ed9f
-  overrideApiKey: 0
+  apiKey: sk_5d774c9a2f8b2788a2b0f36c7f664e55227282da28ee323b
+  overrideApiKey: 1
   endpoint: https://api.elevenlabs.io
   model: scribe_v1
-  voiceId: Xb7hH8MSUJpSbSDYk0k2
+  voiceId: 21m00Tcm4TlvDq8ikWAM
   sttLanguage: 
   sttIncludeAudioEvents: 0
