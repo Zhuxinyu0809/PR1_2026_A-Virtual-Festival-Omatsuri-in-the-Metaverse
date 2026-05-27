@@ -10,7 +10,7 @@
 
 using System.Collections;
 using UnityEngine;
-using Meta.XR.BuildingBlocks.AIBlocks; // 引入 Meta AI Blocks 命名空間
+using Meta.XR.BuildingBlocks.AIBlocks; // 引入 Meta XR v85 AI Blocks 官方命名空間
 
 namespace Meta.XR.BuildingBlocks.AIBlocks
 {
@@ -21,7 +21,7 @@ namespace Meta.XR.BuildingBlocks.AIBlocks
         [SerializeField] private TextToSpeechAgent _ttsAgent;
 
         [Header("感應範圍")]
-        [Tooltip("指定 NPC 身上負責偵測玩家進入的 Box Collider。")]
+        [Tooltip("拖入 AI Triggers 物件上的 Box Collider (可位於子物件，例如 AI Triggers)")]
         public BoxCollider greetingCollider;
 
         [Header("打招呼文本")]
@@ -42,31 +42,7 @@ namespace Meta.XR.BuildingBlocks.AIBlocks
 
         private void Awake()
         {
-            // 確保有指定 BoxCollider
-            if (greetingCollider != null)
-            {
-                // 自動將指定的 BoxCollider 設為 Trigger 模式
-                if (!greetingCollider.isTrigger)
-                {
-                    greetingCollider.isTrigger = true;
-                    Debug.LogWarning($"[NpcGreeting] 已自動將指定之 {greetingCollider.name} 設為 IsTrigger。");
-                }
-            }
-            else
-            {
-                // 如果在 Inspector 沒有手動指派，則嘗試從自身獲取 BoxCollider
-                greetingCollider = GetComponent<BoxCollider>();
-                if (greetingCollider != null)
-                {
-                    greetingCollider.isTrigger = true;
-                }
-                else
-                {
-                    Debug.LogError($"[NpcGreeting] {gameObject.name} 找不到 BoxCollider！請在 Inspector 手動指派 greetingCollider。");
-                }
-            }
-
-            // 自動配對 TextToSpeechAgent
+            // 1. 自動配對 TextToSpeechAgent
             if (_ttsAgent == null)
             {
                 _ttsAgent = GetComponentInChildren<TextToSpeechAgent>();
@@ -75,24 +51,54 @@ namespace Meta.XR.BuildingBlocks.AIBlocks
                     Debug.LogError($"[NpcGreeting] 找不到 TextToSpeechAgent。請手動拖拽指派至 {gameObject.name}。");
                 }
             }
-        }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            // 檢查進入範圍的物件是否為玩家
-            if (other.CompareTag(_playerTag))
+            // 2. 參考 NpcAIController 嘅設計，動態配置物理轉發器 (Forwarder)
+            if (greetingCollider != null)
             {
-                if (greetingCollider != null && greetingCollider.enabled)
+                ConfigureTriggerCollider(greetingCollider);
+            }
+            else
+            {
+                // 若未在 Inspector 指派，自動在自身或子物件尋找 BoxCollider
+                greetingCollider = GetComponentInChildren<BoxCollider>();
+                if (greetingCollider != null)
                 {
-                    _isPlayerInside = true;
-                    TryTriggerGreeting();
+                    ConfigureTriggerCollider(greetingCollider);
+                }
+                else
+                {
+                    Debug.LogError($"[NpcGreeting] {gameObject.name} 找不到 BoxCollider！請在 Inspector 手動指派 greetingCollider。");
                 }
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        /// <summary>
+        /// 配置 Trigger Collider 並掛載 Forwarder 轉發器
+        /// </summary>
+        private void ConfigureTriggerCollider(BoxCollider collider)
         {
-            // 檢查離開範圍的物件是否為玩家
+            collider.isTrigger = true;
+            GreetingTriggerForwarder forwarder = collider.GetComponent<GreetingTriggerForwarder>();
+            if (forwarder == null)
+            {
+                forwarder = collider.gameObject.AddComponent<GreetingTriggerForwarder>();
+            }
+            forwarder.mainController = this;
+        }
+
+        // --- 核心物理事件接收處理 (由 Forwarder 轉發) ---
+
+        public void HandleTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(_playerTag))
+            {
+                _isPlayerInside = true;
+                TryTriggerGreeting();
+            }
+        }
+
+        public void HandleTriggerExit(Collider other)
+        {
             if (other.CompareTag(_playerTag))
             {
                 if (_isPlayerInside)
@@ -156,5 +162,29 @@ namespace Meta.XR.BuildingBlocks.AIBlocks
         // 目前是否正在冷卻中
         public bool InCooldown => _inCooldown;
         #endregion
+    }
+
+    /// <summary>
+    /// 內部轉發器類別：用於掛載在指定的 BoxCollider 上並接收物理事件，然後轉發回 NpcGreetingTrigger
+    /// </summary>
+    public class GreetingTriggerForwarder : MonoBehaviour
+    {
+        public NpcGreetingTrigger mainController;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (mainController != null)
+            {
+                mainController.HandleTriggerEnter(other);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (mainController != null)
+            {
+                mainController.HandleTriggerExit(other);
+            }
+        }
     }
 }

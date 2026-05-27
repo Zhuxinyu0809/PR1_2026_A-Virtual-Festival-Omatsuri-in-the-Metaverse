@@ -6498,9 +6498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aacff93e6e054e01bfb7a2ace6692c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIChatTesting
-  speechToTextAgent: {fileID: 1325616967}
+  speechToTextAgent: {fileID: 0}
   llmAgent: {fileID: 1304757835}
-  textToSpeechAgent: {fileID: 627696113}
+  textToSpeechAgent: {fileID: 0}
   testSystemPrompt: 'You are Haruka, the warm-hearted and friendly proprietress of
     the traditional mask shop at the lively Omatsuri festival. You have a deep passion
     for Japanese festival masks and love sharing their rich folklore, legends, and
@@ -10354,7 +10354,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597712397}
-  - component: {fileID: 597712398}
   - component: {fileID: 597712399}
   m_Layer: 0
   m_Name: AI Scripts
@@ -10378,45 +10377,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 490602170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &597712398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597712396}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef8dba76d24ef49eb8894be0dcb15c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NpcAIController
-  speechToTextAgent: {fileID: 1325616967}
-  llmAgent: {fileID: 1304757835}
-  textToSpeechAgent: {fileID: 627696113}
-  npcRagContext: 'You are Haruka, the warm-hearted and friendly proprietress of the
-    traditional mask shop at the lively Omatsuri festival. You have a deep passion
-    for Japanese festival masks and love sharing their rich folklore, legends, and
-    spiritual meanings with visitors in an engaging way.
-
-
-    You are especially
-    knowledgeable about:
-
-    - Kitsune (fox) masks: symbols of the god Inari, representing
-    cleverness, wisdom, protection, and good fortune.
-
-    - Tengu masks: powerful
-    mountain spirits with long noses, known for strength, martial arts mastery, wisdom,
-    and sometimes playful mischief.
-
-
-    Speak in a warm, enthusiastic, slightly
-    mysterious, and motherly tone like a welcoming Japanese oba-san. Be an engaging
-    storyteller. Keep your responses natural, conversational, and concise so they
-    work perfectly with Text-to-Speech. Always stay in character and encourage players
-    to ask about or try on the masks.'
-  aiTriggerCollider: {fileID: 0}
-  debugText: {fileID: 90665418}
 --- !u!114 &597712399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10429,7 +10389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6466113a44b4d56b8eb903971133f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Meta.XR.BuildingBlocks.AIBlocks.NpcGreetingTrigger
-  _ttsAgent: {fileID: 627696113}
+  _ttsAgent: {fileID: 1521970821}
   greetingCollider: {fileID: 1295954587}
   _greetingText: Hello, would you like to try some delicious takoyaki? Or you could
     make your own takoyaki!
@@ -11223,186 +11183,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &627696111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 627696115}
-  - component: {fileID: 627696114}
-  - component: {fileID: 627696113}
-  - component: {fileID: 627696112}
-  m_Layer: 0
-  m_Name: '[BuildingBlock] Text To Speech'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &627696112
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627696111}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &627696113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627696111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439814c7becd54b4b9004c9d8c7aefea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  providerAsset: {fileID: 11400000, guid: 814c8ecef870d45639dbcae47f5c4c9d, type: 2}
-  audioSource: {fileID: 627696112}
-  preset: 0
-  text: Hi! This is a quick text-to-speech test.
-  onClipReady:
-    m_PersistentCalls:
-      m_Calls: []
-  onSpeakStarting:
-    m_PersistentCalls:
-      m_Calls: []
-  onSpeakFinished:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &627696114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627696111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
-  blockId: 89916747-a8be-4d3e-8563-65b00c7d2ffa
-  instanceId: 742c43f3-bce7-4c54-8b0a-5bebf2ccb4c0
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: 0844a8bd-2bf8-4cfb-8d71-911f1f917314
-    _installationVariants:
-    - _memberName: providerAssetSelection
-      _value: Create a new provider asset
-    - _memberName: inferenceType
-      _value: '{"value__":1}'
-    - _memberName: modelProvider
-      _value: ElevenLabs - eleven_flash_v2_5
---- !u!4 &627696115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627696111}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628047955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 92aa6eea3748443ab837f0b279933d34, type: 3}
@@ -19892,8 +19672,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003756292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19903,7 +19683,7 @@ Transform:
   - {fileID: 3836010495739598591}
   - {fileID: 1918569937566137154}
   - {fileID: 6915972058560973682}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1617351741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1004511404
 PrefabInstance:
@@ -20486,7 +20266,7 @@ MonoBehaviour:
     storyteller. Keep your responses natural, conversational, and concise so they
     work perfectly with Text-to-Speech. Always stay in character and encourage players
     to ask about or try on the masks.'
-  aiTriggerCollider: {fileID: 0}
+  aiTriggerCollider: {fileID: 1927254059}
   debugText: {fileID: 90665418}
 --- !u!114 &1024738824
 MonoBehaviour:
@@ -21744,9 +21524,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3500423100821321662, guid: 8809e44bf8d844233bee3bebd528ee71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1927254058}
-    - targetCorrespondingSourceObject: {fileID: 3500423100821321662, guid: 8809e44bf8d844233bee3bebd528ee71, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1677200766}
     - targetCorrespondingSourceObject: {fileID: 3500423100821321662, guid: 8809e44bf8d844233bee3bebd528ee71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 785263148}
@@ -25748,7 +25525,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -26413,97 +26190,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2025996874825941964, guid: bf9920abae7e042e8b4e805e77c54b9e, type: 3}
---- !u!1 &1325616966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1325616969}
-  - component: {fileID: 1325616968}
-  - component: {fileID: 1325616967}
-  m_Layer: 0
-  m_Name: '[BuildingBlock] Speech To Text'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1325616967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325616966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebafe374ff6848bb9b28beabd283b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  providerAsset: {fileID: 11400000, guid: 1feb8877aa03b4922ac059a0c0954cda, type: 2}
-  deviceName: 
-  sampleRate: 16000
-  channels: 1
-  rmsWindowSeconds: 0.02
-  vadStartThresholdDb: 14
-  vadStopThresholdDb: 8
-  maxSilenceSeconds: 0.8
-  minSpeechSeconds: 0.25
-  endPadSeconds: 0.06
-  envelopeAttackSeconds: 0.02
-  envelopeReleaseSeconds: 0.1
-  noiseWindowSeconds: 1.5
-  noisePercentile: 0.2
-  quietMarginDb: 1
-  maxDurationSeconds: 20
-  prePadSeconds: 0.35
-  manualStopOnly: 0
-  onTranscript:
-    m_PersistentCalls:
-      m_Calls: []
-  lastTranscript: 
---- !u!114 &1325616968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325616966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
-  blockId: b246d3bb-3f91-4efe-893c-c4c2d0de7210
-  instanceId: 3d05de30-2616-4ebb-b096-e488048f1b8c
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: 23952c08-05e9-48de-b271-fadf8448828c
-    _installationVariants:
-    - _memberName: providerAssetSelection
-      _value: Create a new provider asset
-    - _memberName: inferenceType
-      _value: '{"value__":1}'
-    - _memberName: modelProvider
-      _value: ElevenLabs - scribe_v1
---- !u!4 &1325616969
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325616966}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325773374
 GameObject:
   m_ObjectHideFlags: 0
@@ -30041,7 +29727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439814c7becd54b4b9004c9d8c7aefea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  providerAsset: {fileID: 11400000, guid: 814c8ecef870d45639dbcae47f5c4c9d, type: 2}
+  providerAsset: {fileID: 11400000, guid: 346c2bce04ca245ea95c2ec61545db94, type: 2}
   audioSource: {fileID: 1521970820}
   preset: 0
   text: Hi! This is a quick text-to-speech test.
@@ -31966,6 +31652,7 @@ Transform:
   - {fileID: 3095419307748933809}
   - {fileID: 1704299584}
   - {fileID: 238903519}
+  - {fileID: 1003756293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620827334 stripped
@@ -32849,135 +32536,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!1 &1677200765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1677200766}
-  - component: {fileID: 1677200767}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1677200766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677200765}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00857, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1095073828}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1677200767
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677200765}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1682007863
 GameObject:
   m_ObjectHideFlags: 0
@@ -36948,7 +36506,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -63880,10 +63438,7 @@ SceneRoots:
   - {fileID: 2124596447}
   - {fileID: 1698033480}
   - {fileID: 280092020}
-  - {fileID: 1003756293}
   - {fileID: 867979539}
   - {fileID: 239014523}
   - {fileID: 1304757837}
-  - {fileID: 1325616969}
-  - {fileID: 627696115}
   - {fileID: 381902014}
