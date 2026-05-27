@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08134aa6e715643d196865990e69c55b, type: 3}
-  m_Name: STT_ElevenLabs_ProviderProfile 1
+  m_Name: TTS_Mask
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.ElevenLabsProvider
   supportedInferenceTypes: 1
-  apiKey: 4cada80295be9def12870cdae14e6f21cfefcd3b7a9c1d0484dc5bfbc179c56c
+  apiKey: sk_1348d1d3ca7e06ae1c2258556f97d4872238d3b5a44759c8
   overrideApiKey: 1
   endpoint: https://api.elevenlabs.io
-  model: scribe_v1
+  model: eleven_flash_v2_5
   voiceId: cgSgspJ2msm6clMCkdW9
   sttLanguage: 
   sttIncludeAudioEvents: 0
