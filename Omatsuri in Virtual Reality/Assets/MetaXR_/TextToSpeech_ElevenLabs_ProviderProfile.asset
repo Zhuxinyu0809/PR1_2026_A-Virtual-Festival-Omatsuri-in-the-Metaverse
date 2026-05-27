@@ -17,6 +17,6 @@ MonoBehaviour:
   overrideApiKey: 1
   endpoint: https://api.elevenlabs.io
   model: scribe_v1
-  voiceId: 21m00Tcm4TlvDq8ikWAM
+  voiceId: Xb7hH8MSUJpSbSDYk0k2
   sttLanguage: 
   sttIncludeAudioEvents: 0

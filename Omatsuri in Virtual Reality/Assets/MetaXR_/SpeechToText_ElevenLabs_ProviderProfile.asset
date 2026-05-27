@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08134aa6e715643d196865990e69c55b, type: 3}
-  m_Name: TextToSpeech_ElevenLabs_ProviderProfile
+  m_Name: SpeechToText_ElevenLabs_ProviderProfile
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.ElevenLabsProvider
   supportedInferenceTypes: 1
   apiKey: sk_5d774c9a2f8b2788a2b0f36c7f664e55227282da28ee323b

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: LargeLanguageModels_HuggingFace_ProviderProfile
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.HuggingFaceProvider
   supportedInferenceTypes: 1
-  apiKey: sk-5T7B1RvlpIWVMkpHdc1GR6nIOsrlJx0w6BlrBWyH2LX6MV3r
+  apiKey: sk-270e43a508d64a1db9712ec52cd16422
   overrideApiKey: 0
-  modelId: gpt-5.4
-  endpoint: https://api.mcxhm.cn
+  modelId: deepseek-chat
+  endpoint: https://api.deepseek.com/v1/chat/completions
   supportsVision: 0
   inlineRemoteImages: 1
   resolveRemoteRedirects: 1
