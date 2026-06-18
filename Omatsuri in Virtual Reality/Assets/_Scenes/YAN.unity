@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d6f5b84b9677d4d6699a837963a2d220, type: 3}
       propertyPath: m_Name
-      value: "\u635E\u9C7C\u67B6"
+      value: Pool
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -15099,7 +15099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f88e104b831fb42deac5c2f7e7640e5c, type: 3}
       propertyPath: m_Name
-      value: "\u91D1\u9C7C"
+      value: Goldfish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
