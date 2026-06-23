@@ -8,6 +8,12 @@ TagManager:
   - PaperBowl
   - Mouth
   - Mask
+  - NPC
+  - Pared
+  - Pajaro
+  - Depredador
+  - IndexFingerTip
+  - BowlTakoyaki
   layers:
   - Default
   - TransparentFX

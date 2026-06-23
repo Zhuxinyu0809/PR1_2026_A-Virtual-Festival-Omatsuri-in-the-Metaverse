@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TTS_Mask
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks.AIBlocks::Meta.XR.BuildingBlocks.AIBlocks.ElevenLabsProvider
   supportedInferenceTypes: 1
-  apiKey: sk_c2efba03d093f1ae192573e14b690e56cd4872caa64e1f3d
+  apiKey: 22107d1e8be1a2383c991afcf4c4c362fb59c9f955e43f7731f68d0de0ca60b7
   overrideApiKey: 1
   endpoint: https://api.elevenlabs.io
-  model: eleven_flash_v2_5
+  model: scribe_v1
   voiceId: cgSgspJ2msm6clMCkdW9
   sttLanguage: 
   sttIncludeAudioEvents: 0

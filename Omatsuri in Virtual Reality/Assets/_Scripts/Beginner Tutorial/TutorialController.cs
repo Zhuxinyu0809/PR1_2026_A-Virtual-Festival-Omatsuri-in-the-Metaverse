@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement; // 引入場景管理
 
 public class TutorialController : MonoBehaviour
 {
@@ -14,9 +15,15 @@ public class TutorialController : MonoBehaviour
         Completed
     }
 
-    [Header("UI References")]
+    [Header("UI References (Phase 1)")]
     public TextMeshProUGUI instructionText;
     public Image instructionImage;
+
+    [Header("UI References (Phase 2, 3 & Transition)")]
+    [Tooltip("用來顯示 Phase 2, 3 嘅文字")]
+    public TextMeshProUGUI phase2And3Text;
+    [Tooltip("用來顯示 3, 2, 1 倒數嘅圖片")]
+    public Image countdownImage;
 
     [Header("Phase 1: Controller Inputs")]
     public TutorialStep[] buttonSteps;
@@ -25,19 +32,20 @@ public class TutorialController : MonoBehaviour
     [Header("Phase 2: Grab & Place")]
     [Tooltip("The GameObject containing the table and the mask.")]
     public GameObject tableAndMaskEnvironment;
-    [Tooltip("Image to show when asking to grab the mask.")]
-    public Sprite grabMaskImage;
-    [Tooltip("Image to show when asking to place the mask.")]
-    public Sprite placeMaskImage;
 
-    [Header("Phase 3: Hand Tracking")]
-    [Tooltip("Image to show when asking to put down controllers.")]
-    public Sprite handTrackingImage;
+    [Header("Transition & Countdown Settings")]
+    public Sprite countdown3;
+    public Sprite countdown2;
+    public Sprite countdown1;
+    [Tooltip("倒數結束後要切換嘅場景名稱")]
+    public string nextSceneName = "MainScene";
 
     private TutorialPhase currentPhase = TutorialPhase.ControllerButtons;
     private bool isTransitioning = false;
+    private bool isTutorialCompleted = false; // 避免重複觸發完成流程
 
-    public enum InputType { LeftGrip, RightGrip, LeftTrigger, RightTrigger, LeftThumbstick, RightThumbstick }
+    // 加入咗 ButtonX, ButtonY, ButtonA, ButtonB
+    public enum InputType { LeftGrip, RightGrip, LeftTrigger, RightTrigger, ButtonX, ButtonY, ButtonA, ButtonB, LeftThumbstick, RightThumbstick }
 
     [System.Serializable]
     public class TutorialStep
@@ -50,16 +58,22 @@ public class TutorialController : MonoBehaviour
 
     void Start()
     {
-        // 確保初始狀態隱藏桌子同面具
+        // 確保初始狀態隱藏桌子、面具、以及新加入嘅 UI 欄位
         if (tableAndMaskEnvironment != null)
             tableAndMaskEnvironment.SetActive(false);
+            
+        if (phase2And3Text != null)
+            phase2And3Text.gameObject.SetActive(false);
+            
+        if (countdownImage != null)
+            countdownImage.gameObject.SetActive(false);
 
         UpdateUI();
     }
 
     void Update()
     {
-        if (isTransitioning) return;
+        if (isTransitioning || isTutorialCompleted) return;
 
         switch (currentPhase)
         {
@@ -88,6 +102,12 @@ public class TutorialController : MonoBehaviour
             case InputType.RightGrip: return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch) > 0.5f;
             case InputType.LeftTrigger: return OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) > 0.5f;
             case InputType.RightTrigger: return OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.5f;
+            
+            case InputType.ButtonX: return OVRInput.Get(OVRInput.RawButton.X);
+            case InputType.ButtonY: return OVRInput.Get(OVRInput.RawButton.Y);
+            case InputType.ButtonA: return OVRInput.Get(OVRInput.RawButton.A);
+            case InputType.ButtonB: return OVRInput.Get(OVRInput.RawButton.B);
+            
             case InputType.LeftThumbstick: return OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.LTouch).magnitude > 0.5f;
             case InputType.RightThumbstick: return OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch).magnitude > 0.5f;
             default: return false;
@@ -115,7 +135,6 @@ public class TutorialController : MonoBehaviour
     }
 
     // --- Phase 2: Grab and Place Logic ---
-    // 呢個 method 會由 Interaction SDK 嘅 Event Wrapper 觸發
     public void OnMaskGrabbed()
     {
         if (currentPhase == TutorialPhase.GrabMask)
@@ -125,7 +144,6 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    // 呢個 method 會由我哋自訂嘅 DropZone 觸發
     public void OnMaskPlaced()
     {
         if (currentPhase == TutorialPhase.PlaceMask)
@@ -138,7 +156,6 @@ public class TutorialController : MonoBehaviour
     // --- Phase 3: Hand Tracking Logic ---
     private void CheckForHandTracking()
     {
-        // 喺 v85 中，當玩家放低手掣並舉起雙手，Active Controller 會自動切換為 Hands/LHand/RHand
         OVRInput.Controller activeController = OVRInput.GetActiveController();
         if (activeController == OVRInput.Controller.LHand || 
             activeController == OVRInput.Controller.RHand || 
@@ -152,33 +169,77 @@ public class TutorialController : MonoBehaviour
     // --- UI Management ---
     private void UpdateUI()
     {
-        if (instructionText == null || instructionImage == null) return;
-
-        instructionImage.gameObject.SetActive(true);
+        if (instructionText == null || instructionImage == null || phase2And3Text == null) return;
 
         switch (currentPhase)
         {
             case TutorialPhase.ControllerButtons:
+                instructionText.gameObject.SetActive(true);
+                instructionImage.gameObject.SetActive(true);
+                phase2And3Text.gameObject.SetActive(false);
+
                 instructionText.text = buttonSteps[currentButtonStepIndex].promptText;
                 instructionImage.sprite = buttonSteps[currentButtonStepIndex].promptImage;
                 break;
+
             case TutorialPhase.GrabMask:
-                instructionText.text = "Great! Now grab the mask on the table using the Grip button.";
-                instructionImage.sprite = grabMaskImage;
-                break;
-            case TutorialPhase.PlaceMask:
-                instructionText.text = "Place the mask into the highlighted target zone.";
-                instructionImage.sprite = placeMaskImage;
-                break;
-            case TutorialPhase.SwitchToHands:
-                instructionText.text = "Put down your controllers. Hold your hands up to activate Hand Tracking.";
-                instructionImage.sprite = handTrackingImage;
-                break;
-            case TutorialPhase.Completed:
-                instructionText.text = "Hand Tracking Activated! Tutorial Complete.";
+                // 進入 Phase 2 時隱藏圖片及 Phase 1 嘅文字，顯示專屬 Text
+                instructionText.gameObject.SetActive(false);
                 instructionImage.gameObject.SetActive(false);
-                Debug.Log("Tutorial fully completed!");
+                phase2And3Text.gameObject.SetActive(true);
+
+                phase2And3Text.text = "Great! Now grab the mask on the table using the Grip button.";
+                break;
+
+            case TutorialPhase.PlaceMask:
+                phase2And3Text.text = "Place the mask into the highlighted target zone.";
+                break;
+
+            case TutorialPhase.SwitchToHands:
+                phase2And3Text.text = "Put down your controllers. Hold your hands up to activate Hand Tracking.";
+                break;
+
+            case TutorialPhase.Completed:
+                isTutorialCompleted = true; // 標記完成，唔好再更新
+                phase2And3Text.text = "Hand Tracking Activated! Tutorial Complete.";
+                Debug.Log("Tutorial fully completed! Starting transition sequence...");
+                
+                // 開始倒數及切換場景嘅流程
+                StartCoroutine(CountdownAndTransition());
                 break;
         }
+    }
+
+    // --- Transition Sequence ---
+    private IEnumerator CountdownAndTransition()
+    {
+        // 1. 等待兩秒
+        yield return new WaitForSeconds(2f);
+
+        // 2. 出現文字提醒玩家準備進入 Omatsuri
+        phase2And3Text.text = "Ready to enter Omatsuri";
+
+        // 3. 提示文字出現兩秒後消失
+        yield return new WaitForSeconds(2f);
+        phase2And3Text.gameObject.SetActive(false);
+
+        // 4. 出現圖片 "3"
+        if (countdownImage != null)
+        {
+            countdownImage.gameObject.SetActive(true);
+            countdownImage.sprite = countdown3;
+        }
+
+        // 5. 一秒後變為圖片 "2"
+        yield return new WaitForSeconds(1f);
+        if (countdownImage != null) countdownImage.sprite = countdown2;
+
+        // 6. 一秒後變為圖片 "1"
+        yield return new WaitForSeconds(1f);
+        if (countdownImage != null) countdownImage.sprite = countdown1;
+
+        // 7. 一秒後切換到另一個場景
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(nextSceneName);
     }
 }
