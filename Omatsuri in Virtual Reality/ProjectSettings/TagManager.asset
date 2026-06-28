@@ -14,6 +14,9 @@ TagManager:
   - Depredador
   - IndexFingerTip
   - BowlTakoyaki
+  - Water
+  - HealZone
+  - Goldfish
   layers:
   - Default
   - TransparentFX

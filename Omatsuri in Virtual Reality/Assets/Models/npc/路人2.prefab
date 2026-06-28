@@ -481,13 +481,10 @@ PrefabInstance:
       addedObject: {fileID: 1519138287659409441}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d61f787a43a34cda854f5decbd038f7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7519227179152460896}
+      addedObject: {fileID: 7697875754629674049}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d61f787a43a34cda854f5decbd038f7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6625107700115168365}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d61f787a43a34cda854f5decbd038f7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4442622609145249057}
+      addedObject: {fileID: 5345186824783770182}
   m_SourcePrefab: {fileID: 100100000, guid: 0d61f787a43a34cda854f5decbd038f7, type: 3}
 --- !u!1 &6609317236919646494 stripped
 GameObject:
@@ -516,31 +513,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7519227179152460896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6609317236919646494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86221b9ccd0349adbb0536114bb7afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoopNavigation
-  targetPointA: {fileID: 0}
-  targetPointB: {fileID: 0}
---- !u!195 &6625107700115168365
+--- !u!195 &7697875754629674049
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6609317236919646494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 0.0045
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -548,28 +531,22 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.02
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!65 &4442622609145249057
-BoxCollider:
+  m_ObstacleAvoidanceType: 1
+--- !u!114 &5345186824783770182
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6609317236919646494}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dab82a03dd548e5a8900f670f3d0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCWaypointPatrol
+  routeParent: {fileID: 0}
+  waitTimeAtWaypoint: 0
+  npcAnimator: {fileID: 0}
